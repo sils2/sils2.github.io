@@ -18,6 +18,8 @@
 .bg-header {
     background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     box-shadow: 0 2px 2px 0 #aaa;
+    position: sticky;
+    top: 0;
 }
 
 .bg-footer {
@@ -29,8 +31,6 @@
 .header {
     background-color: transparent;
     min-height: 100px;
-    position: sticky;
-    top: 0;
 }
 
 .menu {
