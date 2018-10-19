@@ -83,6 +83,34 @@
                                     background-color: transparent;
                                     min-height: 100px;
                                 }
+                                /* 애니메이션 모듈 */
+                                
+                                .fade {
+                                    opacity: 0.5;
+                                }
+                                
+                                .fade:hover {
+                                    opacity: 1;
+                                }
+                                
+                                .grow:hover {
+                                    -webkit-transform: scale(1.3);
+                                    -ms-transform: scale(1.3);
+                                    transform: scale(1.3);
+                                }
+                                
+                                .threed:hover {
+                                    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+                                    -webkit-transform: translateX(-3px);
+                                    transform: translateX(-3px);
+                                }
+                                
+                                .swing:hover {
+                                    -webkit-animation: swing 1s ease;
+                                    animation: swing 1s ease;
+                                    -webkit-animation-iteration-count: 1;
+                                    animation-iteration-count: 1;
+                                }
                                 /* 메인 메뉴 */
                                 
                                 .main-menu {
@@ -92,12 +120,17 @@
                                 }
                                 
                                 .main-menu a {
+                                    transition: all 2s;
                                     font-weight: 700;
                                     font-size: 2rem;
                                     display: block;
                                     padding: 10px;
                                     text-shadow: 1px 1px 3px #999, 2px 2px 3px #999, 3px 3px 3px #999;
                                 }
+                                /* .main-menu a:hover {
+                                    background-color: yellow;
+                                    border-bottom: 1px dotted #000;
+                                } */
                                 /* 메인 콘텐츠 */
                                 
                                 .content {
@@ -111,6 +144,7 @@
                                 .text-effect {
                                     background: #333 url("images/animation-bg.jpg") no-repeat 50% 50% /cover fixed;
                                     width: 1000px;
+                                    height: 300px;
                                     position: relative;
                                 }
                                 
@@ -121,18 +155,17 @@
                                     position: absolute;
                                     top: 50%;
                                     left: 50%;
-                                    background: blue;
                                     transform: translate(-50%, -50%)
                                 }
                                 
                                 .frame1 {
                                     /* animation-play-state: paused; (자바스크립트 이용시)*/
-                                    animation: textSize 3s forwards infinite ease-in-out;
+                                    animation: textSize 3s forwards ease-in-out;
                                 }
                                 
                                 .frame2 {
                                     opacity: 0;
-                                    animation: textSpin 3s backwards 3s ease-in-out;
+                                    animation: textSpin 3s forwards 3s ease-in-out;
                                 }
                                 
                                 @keyframes textSize {
@@ -151,12 +184,14 @@
                                 @keyframes textSpin {
                                     0% {
                                         opacity: 0;
-                                        transform: rotate(0deg);
-                                        transform-origin: center;
+                                        transform: rotate(0deg) translate(-50%, -50%);
+                                        transform-origin: 0% 0%;
                                     }
                                     100% {
                                         opacity: 1;
-                                        transform: rotate(2turn)
+                                        font-size: 60px;
+                                        transform: rotate(2turn) translate(-50%, -50%);
+                                        transform-origin: 0% 0%;
                                     }
                                 }
                                 /* 새소식 */
